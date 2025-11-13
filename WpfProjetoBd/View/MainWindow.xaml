@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfProjetoBd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bem Vindo!" Height="480" Width="854" Icon="/Assets/Gatoflix-logo.png">
+
+    <Window.Resources>
+        <!-- Estilo para os botões -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#e50914"/>
+            <Setter Property="Foreground" Value="#FFF"/>
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!-- Estilo para as TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#141414"/>
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="5" />
+        </Style>
+
+
+        <!-- Estilo para as PasswordBox -->
+        <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="#141414"/>
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="5" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#141414">
+        <Image Source="/Assets/ImagemVariosFilmes.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Opacity="0.3" />
+        <Image Source="/Assets/gatoflix-nome.png" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Opacity="1">
+            <TextBlock Foreground="#FFF" FontSize="48" FontWeight="SemiBold" Margin="8">Bem Vindo Ao Gatoflix!</TextBlock>
+            <TextBlock Foreground="#FFF" FontSize="16" Margin="10 10 0 5">Filmes, séries e documentários para todos os gostos.</TextBlock>
+            <TextBlock Foreground="#FFF" FontSize="16" Margin="10 0 0 0">Assista onde e quando quiser — sem limites, sem complicações.</TextBlock>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="8 30 0 0">
+                <Button x:Name="btnEntrar" Click="btnEntrar_Click">Entrar</Button>
+                <Button x:Name="btnCriar" Background="#FFF" Foreground="#141414" Click="btnCriar_Click">Criar Conta</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
