@@ -19,12 +19,12 @@ namespace WpfProjetoBd.Models
         public string Categoria { get; private set; }
 
         //Construtor
-        public Trailer(string titulo, string descricao, string trailerUrl, string categoria)
+        public Trailer(string titulo, string capa, string categoria, string descricao)
         {
             IdTrailer = proximoIdTrailer++;
             Titulo = titulo;
+            Capa = capa;
             Descricao = descricao;
-            TrailerUrl = trailerUrl;
             Categoria = categoria;
         }
 

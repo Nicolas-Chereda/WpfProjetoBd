@@ -55,13 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\TrailerController.cs" />
     <Compile Include="Models\Amigo.cs" />
     <Compile Include="Models\Mensagem.cs" />
     <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Trailer.cs" />
     <Compile Include="Models\Usuario.cs" />
-    <Compile Include="View\CardFilme.xaml.cs">
+    <Compile Include="View\UserControls\CardFilme.xaml.cs">
       <DependentUpon>CardFilme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\FichaGenéricaFilme.xaml.cs">
+      <DependentUpon>FichaGenéricaFilme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ListaDeFilmes.xaml.cs">
+      <DependentUpon>ListaDeFilmes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\TelaDeFilmes.xaml.cs">
+      <DependentUpon>TelaDeFilmes.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -72,9 +82,21 @@
     <Compile Include="View\Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\CardFilme.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\UserControls\CardFilme.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\FichaGenéricaFilme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\ListaDeFilmes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\TelaDeFilmes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>
@@ -139,5 +161,6 @@
   <ItemGroup>
     <Resource Include="Assets\gatoflix-nome.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

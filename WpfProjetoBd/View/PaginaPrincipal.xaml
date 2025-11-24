@@ -2,65 +2,35 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WpfProjetoBd"
-        Title="Página Principal" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+        Title="Página Principal" Height="720" Width="1380" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource Texto}"/>
         </Style>
     </Window.Resources>
-    
-    <Grid Background="{StaticResource Secundaria}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+	<Grid Background="{StaticResource Secundaria}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="50"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		
+		<!-- Menu Lateral -->
+		<Grid Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="100"/>
+				<RowDefinition Height="100"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0" Background="{StaticResource SecundariaEscura}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition  Width="*"/>
-                <ColumnDefinition  Width="*"/>
-            </Grid.ColumnDefinitions>
+			<Button Grid.Row="1" Content="Início" Margin="5" Click="BtnInicio_Click"/>
+			<Button Grid.Row="2" Content="Amigos" Margin="5" Click="BtnAmigos_Click"/>
+		</Grid>
 
-            <TextBlock x:Name="TituloBanner">Título</TextBlock>
-            <TextBlock x:Name="DescricaoBanner" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
-
-            <Image Grid.Column="1" x:Name="ImagemBanner"/>
-        </Grid>
-
-        <ScrollViewer Grid.Row="1"
-              VerticalScrollBarVisibility="Hidden"
-              HorizontalScrollBarVisibility="Disabled"
-              PanningMode="VerticalOnly"
-              CanContentScroll="False"
-              PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
-            <StackPanel>
-                <ItemsControl ItemsSource="{Binding}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,30">
-
-                                <!-- 🏷️ Título da categoria -->
-                                <TextBlock Text="{Binding Nome}"
-                                   FontSize="18"
-                                   FontWeight="Bold"
-                                   Foreground="{StaticResource Texto}"
-                                   Margin="30,0,0,5"/>
-                                
-
-                                <!-- 🎬 Linha de filmes -->
-                                <local:CardFilme Loaded="CardFilme_Loaded"/>
-
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </ScrollViewer>
-
-    </Grid>
+		<!-- Conteúdo Principal -->
+		<ContentControl Grid.Column="1" x:Name="ConteudoPrincipal"/>
+		
+	</Grid>
 </Window>
